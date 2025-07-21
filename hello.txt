@@ -18,10 +18,3 @@ git commit -m
 "!fix:breaking message"
 "chore:message"
 
-git branch -M main
-
-git push -u origin main
-
-git remote add origin https://github.com/Bharathraj5002/Git-Practice.git
-
-git push -u origin main
