@@ -1,0 +1,27 @@
+Hello Bharathraj!
+
+git config --global user.name "Bharathraj5002"
+
+git config --global user.email "bharathraje2005@gmail.com"
+
+git clone https://github.com/Bharathraj5002/Git-Practice.git
+
+git init
+
+git add text.txt
+
+git commit -m
+"fix:message"
+"feat:adding index.html"
+"refactor:message"
+"docs:message"
+"!fix:breaking message"
+"chore:message"
+
+git branch -M main
+
+git push -u origin main
+
+git remote add origin https://github.com/Bharathraj5002/Git-Practice.git
+
+git push -u origin main
