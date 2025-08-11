@@ -22,21 +22,34 @@ jobs:
         run: ls
       - name: run tests
         run: npm test
-
-  deploy:
-    needs: test
+  build:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: get code
         uses: actions/checkout@v3
-      - name: install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
       - name: install dependencies
-        run: npm ci 
+        run: npm ci
+      - name: see
+        run: ls
       - name: build project
-        run: npm run build 
+        run: npm run build
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+      - name: see
+        run: ls
       - name: deploy to production
         run: echo "Deploying to production server..." # Replace with actual deployment command
       
