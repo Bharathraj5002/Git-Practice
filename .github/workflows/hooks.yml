@@ -1,0 +1,23 @@
+name: Pre-commit checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check for console.log and debugger
+        run: |
+          if grep -rn "console\.log\|debugger" --include=\*.{js,html} .; then
+            echo "❌ console.log or debugger found!"
+            exit 1
+          fi
+      - name: Check for TODO comments
+        run: |
+          if grep -rn "TODO" --include=\*.{js,html} .; then
+            echo "⚠️ TODO found"
+          fi
