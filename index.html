@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .output {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Web App</h1>
+        <p>This is a simple HTML project with JavaScript functionality.</p>
+        
+        <button class="btn" onclick="showMessage()">Click Me</button>
+        <button class="btn" onclick="calculateSum()">Add Numbers</button>
+        <button class="btn" onclick="getCurrentTime()">Show Time</button>
+        
+        <div id="output" class="output">
+            Output will appear here...
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('output').innerHTML = '🎉 Hello! This button works perfectly.';
+        }
+
+        function calculateSum() {
+            const a = 15;
+            const b = 25;
+            const sum = a + b;
+            document.getElementById('output').innerHTML = `✨ Sum of ${a} + ${b} = ${sum}`;
+        }
+
+        function getCurrentTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            console.log(`⏰ Current time: ${timeString}`);
+            document.getElementById('output').innerHTML = `⏰ Current time: ${timeString}`;
+        }
+
+        // Initialize the page
+        window.onload = function() {
+            showMessage();
+        };
+    </script>
+</body>
+</html>
