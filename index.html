@@ -46,7 +46,7 @@
 <body>
     <div class="container">
         <h1>Simple Web App</h1>
-        <p>This is a simple HTML project with JavaScript functionality.</p>
+        <p>This is a simple HTML project with JavaScript functionality. todo</p>
         
         <button class="btn" onclick="showMessage()">Click Me</button>
         <button class="btn" onclick="calculateSum()">Add Numbers</button>
@@ -72,7 +72,6 @@
         function getCurrentTime() {
             const now = new Date();
             const timeString = now.toLocaleString();
-            console.log(`⏰ Current time: ${timeString}`);
             document.getElementById('output').innerHTML = `⏰ Current time: ${timeString}`;
         }
 
