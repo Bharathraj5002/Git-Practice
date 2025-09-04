@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.json());
+app.post('/', (req, res) => {
+    console.log("✅ Root POST received:", req.body);
+    res.status(200).send('Root POST received!');
+});
 
 // Webhook endpoint
 app.post('/webhook', (req, res) => {
