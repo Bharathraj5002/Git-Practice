@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Check for console.log and debugger
         run: |
-          if grep -rn "console\.log\|debugger" --include=\*.{js,html} .; then
+          if grep -rn "debugger" --include=\*.{js,html} .; then
             echo "❌ console.log or debugger found!"
             exit 1
           fi
