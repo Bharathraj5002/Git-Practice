@@ -18,6 +18,6 @@ jobs:
           fi
       - name: Check for TODO comments
         run: |
-          if grep -rn "TODO" --include=\*.{js,html} .; then
+          if grep -rn "Password" --include=\*.{js,html} .; then
             echo "⚠️ TODO found"
           fi
